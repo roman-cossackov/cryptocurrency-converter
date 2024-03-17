@@ -33,5 +33,11 @@
     background-repeat: no-repeat;
     background-position: right 0.6rem top 50%;
     background-size: 0.8rem auto;
+
+    option {
+      &:hover {
+        background-color: red;
+      }
+    }
   }
 }

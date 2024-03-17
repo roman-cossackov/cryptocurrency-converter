@@ -10,9 +10,9 @@ const CurrencySelector = () => {
       <input type="text" />
       <select name="" id="">
         <option></option>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
+        <option>Биткуин</option>
+        <option>Эфер</option>
+        <option>Юсдт</option>
       </select>
     </div>
   );
