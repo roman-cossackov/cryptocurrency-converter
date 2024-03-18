@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { ITicker } from '../../types/interfaces';
 import { Coin } from '../../types/types';
-import CurrencySelector from '../CurrencySelector/CurrencySelector';
+import CurrencySelector from '../CurrencySelectorOld/CurrencySelector';
 import ExchangeIcon from '../icons/ExchangeIcon/ExchangeIcon';
 import styles from './Converter.module.scss';
 

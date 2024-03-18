@@ -1,10 +1,5 @@
-.title {
-  font-family: 'Madimi One', sans-serif;
-  text-align: center;
-  margin: 50px 0;
-}
-.converter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
