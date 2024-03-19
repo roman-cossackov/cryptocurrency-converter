@@ -1,6 +1,6 @@
 import { Box, Button } from '@mui/material';
 
-import ExchangeIcon from '../ExchangeIcon/ExchangeIcon';
+import ExchangeIcon from '../icons/ExchangeIcon/ExchangeIcon';
 
 interface CurrencySwitcherProps {
   onSwitchCurrencies: (event: React.MouseEvent<HTMLElement>) => void;
