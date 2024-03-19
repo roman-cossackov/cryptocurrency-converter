@@ -26,7 +26,6 @@ const Converter = () => {
     const amount1Price = +prices.filter((p) => p.symbol === coin1)[0].price * amount;
     const coin2Price = +prices.filter((p) => p.symbol === coin2)[0].price;
     toAmount = amount1Price / coin2Price;
-    console.log(fromAmount, toAmount);
   } else if (!amountInFromCurrency && prices) {
     toAmount = amount;
     const amount2Price = +prices.filter((p) => p.symbol === coin2)[0].price * amount;
@@ -108,7 +107,7 @@ const Converter = () => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    timeZoneName: 'shortGeneric',
+    timeZoneName: 'short', //здесь хочу shortGeneric использовать
   };
   const curDate = new Date().toLocaleDateString('ru-RU', options);
 
