@@ -1,6 +1,6 @@
 import { Button, Grid } from '@mui/material';
 
-import ExchangeIcon from './icons/ExchangeIcon/ExchangeIcon';
+import ExchangeIcon from '../ExchangeIcon/ExchangeIcon';
 
 const CurrencySwitcher = () => {
   return (

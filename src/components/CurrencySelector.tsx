@@ -1,6 +1,16 @@
-import { Box, Grid, Input, MenuItem, Select } from '@mui/material';
+import { Box, Grid, Input, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
-const CurrencySwitcher = (props: CurrencySwitcherProps) => {
+interface CurrencySwitcherProps {
+  currencyOptions: string[];
+  selectedCurrency: string;
+  onChangeCurrency: (event: SelectChangeEvent) => void;
+}
+
+const CurrencySwitcher = ({
+  currencyOptions,
+  selectedCurrency,
+  onChangeCurrency,
+}: CurrencySwitcherProps) => {
   const boxStyles = {
     display: 'flex',
     border: '3px solid lightgray',
@@ -40,14 +50,15 @@ const CurrencySwitcher = (props: CurrencySwitcherProps) => {
       <Select
         labelId="crypto-select-label"
         id="crypto-input"
-        // value={}
-        // onChange={}
         sx={selectStyles}
+        value={selectedCurrency}
+        onChange={onChangeCurrency}
       >
-        <MenuItem value={1}></MenuItem>
-        <MenuItem value={10}>BTC</MenuItem>
-        <MenuItem value={20}>ETH</MenuItem>
-        <MenuItem value={30}>USDT</MenuItem>
+        {currencyOptions.map((option) => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}
       </Select>
     </Box>
   );
