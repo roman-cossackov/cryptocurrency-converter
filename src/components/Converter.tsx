@@ -102,7 +102,7 @@ const Converter = () => {
     USDT: 'USDT',
   };
 
-  const options = {
+  const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',
