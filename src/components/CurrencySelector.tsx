@@ -1,15 +1,20 @@
-import { Box, Grid, Input, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { Box, Input, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { ChangeEvent } from 'react';
 
 interface CurrencySwitcherProps {
   currencyOptions: string[];
   selectedCurrency: string;
   onChangeCurrency: (event: SelectChangeEvent) => void;
+  amount: number;
+  onChangeAmount: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CurrencySwitcher = ({
   currencyOptions,
   selectedCurrency,
   onChangeCurrency,
+  amount,
+  onChangeAmount,
 }: CurrencySwitcherProps) => {
   const boxStyles = {
     display: 'flex',
@@ -46,6 +51,8 @@ const CurrencySwitcher = ({
         inputProps={{
           min: 0,
         }}
+        value={amount}
+        onChange={onChangeAmount}
       />
       <Select
         labelId="crypto-select-label"

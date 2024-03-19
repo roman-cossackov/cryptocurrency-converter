@@ -1,21 +1,18 @@
-import { Button, Grid } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 import ExchangeIcon from '../ExchangeIcon/ExchangeIcon';
 
-const CurrencySwitcher = () => {
+interface CurrencySwitcherProps {
+  onSwitchCurrencies: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+const CurrencySwitcher = ({ onSwitchCurrencies }: CurrencySwitcherProps) => {
   return (
-    <Grid
-      item
-      xs={12}
-      md="auto"
-      display="flex"
-      justifyContent="center"
-      alignContent="center"
-    >
-      <Button sx={{ borderRadius: 1 }}>
+    <Box display="flex" justifyContent="center" alignContent="center">
+      <Button sx={{ borderRadius: 1 }} onClick={onSwitchCurrencies}>
         <ExchangeIcon sx={{ fontSize: 30 }} color="rgb(130, 130, 130)" />
       </Button>
-    </Grid>
+    </Box>
   );
 };
 
