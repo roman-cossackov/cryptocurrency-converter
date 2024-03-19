@@ -107,7 +107,7 @@ const Converter = () => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    timeZoneName: 'short', //здесь хочу shortGeneric использовать
+    timeZoneName: 'short',
   };
   const curDate = new Date().toLocaleDateString('ru-RU', options);
 
