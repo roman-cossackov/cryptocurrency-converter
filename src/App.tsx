@@ -1,15 +1,36 @@
 import './App.css';
 
-import Converter from './components/Converter/Converter';
+import { Box, createTheme, ThemeProvider } from '@mui/material';
+
+import Background from './components/Background/Background';
+import Converter from './components/Converter';
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'Madimi One',
+    },
+    // components: {
+    //   MuiOutlinedInput: {
+    //     styleOverrides: {
+    //       input: {
+    //         outline: 'none',
+    //       },
+    //     },
+    //   },
+    // },
+  });
+
   return (
-    <div className="App">
-      <h1 className="title">Cryptocurrency Converter</h1>
-      <div className="converter">
-        <Converter />
-      </div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Background>
+        <Box display="flex" justifyContent="center" marginTop="100px">
+          <div className="App">
+            <Converter />
+          </div>
+        </Box>
+      </Background>
+    </ThemeProvider>
   );
 }
 

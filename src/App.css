@@ -1,10 +1,12 @@
-.title {
-  font-family: 'Madimi One', sans-serif;
-  text-align: center;
-  margin: 50px 0;
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
 }
-.converter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
