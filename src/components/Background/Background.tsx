@@ -7,20 +7,14 @@ interface BackgroundProps {
 }
 
 const Background = ({ children }: BackgroundProps) => {
+  const liArray = new Array(10).fill('');
   return (
     <div className={styles.background}>
       <div className={styles.area}>
         <ul className={styles.circles}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {liArray.map((a, i) => (
+            <li key={i}></li>
+          ))}
         </ul>
       </div>
       <div className={styles.children}>{children}</div>
