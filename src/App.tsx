@@ -10,15 +10,6 @@ function App() {
     typography: {
       fontFamily: 'Madimi One',
     },
-    // components: {
-    //   MuiOutlinedInput: {
-    //     styleOverrides: {
-    //       input: {
-    //         outline: 'none',
-    //       },
-    //     },
-    //   },
-    // },
   });
 
   return (

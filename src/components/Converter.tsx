@@ -18,8 +18,8 @@ const Converter = () => {
   const [amount, setAmount] = useState(0);
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
 
-  let fromAmount = 0,
-    toAmount = 0;
+  let fromAmount = 0;
+  let toAmount = 0;
 
   if (amountInFromCurrency && prices) {
     fromAmount = amount;
@@ -35,9 +35,9 @@ const Converter = () => {
 
   const getPrices = async () => {
     try {
-      const response = await fetch(
-        'https://api.binance.com/api/v3/ticker/price?symbols=["BTCUSDT","ETHUSDT"]',
-      );
+      const url = new URL('https://api.binance.com/api/v3/ticker/price');
+      url.searchParams.set('symbols', '["BTCUSDT","ETHUSDT"]');
+      const response = await fetch(url.toString());
       if (!response.ok) {
         throw new Error('Failed to fetch prices');
       }
@@ -61,11 +61,13 @@ const Converter = () => {
     }
   };
 
+  const updateTime = 60000;
+
   useEffect(() => {
     getPrices();
     const intervalId = setInterval(() => {
       getPrices();
-    }, 60000);
+    }, updateTime);
 
     return () => clearInterval(intervalId);
   }, []);
