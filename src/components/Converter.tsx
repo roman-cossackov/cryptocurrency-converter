@@ -37,7 +37,7 @@ const Converter = () => {
     try {
       const url = new URL('https://api.binance.com/api/v3/ticker/price');
       url.searchParams.set('symbols', '["BTCUSDT","ETHUSDT"]');
-      const response = await fetch(url);
+      const response = await fetch(url.toString());
       if (!response.ok) {
         throw new Error('Failed to fetch prices');
       }
